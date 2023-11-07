@@ -1,6 +1,6 @@
-output "web-server-ips" {
-  value = linode_instance.web-instances.*.ip_address // This is the older way which does not worok for more complex structures 
-}
+# output "web-server-ips" {
+#   value = linode_instance.web-instances.*.ip_address // This is the older way which does not worok for more complex structures 
+# }
 
 
 output "web-server-ips-labels" {
