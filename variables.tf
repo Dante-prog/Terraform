@@ -89,9 +89,9 @@ variable "target_environment" {
 variable "environment_machine_type" {
   description = "The machine type to deploy to"
   default = {
-    "dev" = "g6-nanode-1"
-    "prod" = "g6-standard-2"
-    "qa" = "g6-standard-1"
+    "DEV" = "g6-nanode-1"
+    "PROD" = "g6-standard-2"
+    "QA" = "g6-standard-1"
   }
 }
 
