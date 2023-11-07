@@ -48,3 +48,32 @@ variable "ssh_public_key" {
 # }
 
 
+# MAP OBJECTS FOR CREATING VARIABLES
+variable "environment_instance_settings" {
+default = {
+    "dev" = {
+        region = "us-east"
+        image = "linode/ubuntu20.04"
+        type_image = "g6-nanode-1"
+        labels = {
+          environment = "dev"
+        }
+    }
+    "prod" = {
+        region = "us-east"
+        image = "linode/ubuntu20.04"
+        type_image = "g6-standard-2"
+        labels = {
+          environment = "prod"
+        }
+    }
+    "qa" = {
+        region = "us-east"
+        image = "linode/ubuntu20.04"
+        type_image = "g6-standard-1"
+        labels = {
+          environment = "qa"
+        }
+    }
+}
+}
