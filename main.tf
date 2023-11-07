@@ -5,7 +5,7 @@ provider "linode" {
 #Count meta argument for creating multiple instances
 resource "linode_instance" "web-instances" {
   count =  3
-  label = "web-${count.index}"-var.environment_map[var.target_environment]
+  label = "web-${count.index}-${var.environment_map[var.target_environment]}"
   image = var.linode_config.image
   private_ip = true
   region = var.linode_config.region
