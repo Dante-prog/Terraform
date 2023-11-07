@@ -82,7 +82,7 @@ default = {
 variable "target_environment" {
   description = "The target environment to deploy to"
   type = string
-  default = "dev"
+  default = "DEV"
 }
 
 // Environment machine Type
