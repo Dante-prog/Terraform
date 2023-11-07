@@ -77,3 +77,31 @@ default = {
     }
 }
 }
+
+// Target Environment
+variable "target_environment" {
+  description = "The target environment to deploy to"
+  type = string
+  default = "dev"
+}
+
+// Environment machine Type
+variable "environment_machine_type" {
+  description = "The machine type to deploy to"
+  default = {
+    "dev" = "g6-nanode-1"
+    "prod" = "g6-standard-2"
+    "qa" = "g6-standard-1"
+  }
+}
+
+// Environment Map
+variable "environment_map" {
+  type = map(string)
+  description = "The environment map"
+  default = {
+    "DEV" = "dev"
+    "PROD" = "prod"
+    "QA" = "qa"
+  }
+}
