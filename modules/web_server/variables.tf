@@ -10,6 +10,8 @@ variable "server_settings" {
   type = map(object({
     type_image=string 
     labels=map(string)
+    region=string
+    image=string
   }))
 }
 
@@ -18,9 +20,9 @@ variable "prefix" {
   default = "web"
 }
 
-variable "region" {
-  type = string 
-}
+# variable "region" {
+#   type = string 
+# }
 
 variable "root_password" {
   type = string
@@ -31,7 +33,7 @@ variable "ssh_public_key" {
   type = string
 }
 
-variable "image" {
-  type = string
-  description = "The image to use for the Linode instance (e.g. linode/ubuntu20.04)"  
-}
+# variable "image" {
+#   type = string
+#   description = "The image to use for the Linode instance (e.g. linode/ubuntu20.04)"  
+# }
