@@ -83,18 +83,24 @@ variable "environment_instance_settings" {
   type = map(object({type_image=string, labels=map(string)}))
   default = {
     "DEV" = {
+      region = "us-east"
       type_image = "g6-nanode-1"
+      image = "linode/ubuntu20.04"
       labels = {
         environment = "dev"
       }
     },
    "QA" = {
+      region = "us-east"
+      image = "linode/ubuntu20.04"
       type_image = "g6-standard-1"
       labels = {
         environment = "qa"
       }
     },
     "PROD" = {
+      region = "us-east"
+      image = "linode/ubuntu20.04"
       type_image = "g6-standard-2"
       labels = {
         environment = "prod"

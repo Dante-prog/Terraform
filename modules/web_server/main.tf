@@ -20,9 +20,9 @@ locals {
 resource "linode_instance" "web-servers" {
     for_each = var.server_settings
     label = "${local.prefix}${lower(each.key)}"
-    image = var.image
+    image = each.value.image
     private_ip = true
-    region = var.region
+    region = each.value.region
     type = each.value.type_image
     root_pass = var.root_password
     authorized_keys = [var.ssh_public_key]
