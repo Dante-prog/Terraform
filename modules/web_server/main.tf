@@ -1,5 +1,14 @@
+terraform {
+  required_providers {
+    linode = {
+      source  = "linode/linode"
+      version = "1.30.0"
+    }
+  }
+}
+
 ## PROVIDER CONFIGURATION
-provider "aws" {
+provider "linode" {
   token = var.linode_token
 }
 
@@ -18,3 +27,4 @@ resource "linode_instance" "web-servers" {
     root_pass = var.root_password
     authorized_keys = [var.ssh_public_key]
 }
+
