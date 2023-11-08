@@ -95,7 +95,7 @@ variable "environment_instance_settings" {
       image = "linode/ubuntu20.04"
       type_image = "g6-standard-1"
       labels = {
-        environment = "qa"
+        environment = "qas"
       }
     },
     "PROD" = {
