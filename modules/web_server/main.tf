@@ -19,7 +19,7 @@ locals {
 # RESOURCE DEFINITIONS
 resource "linode_instance" "web-servers" {
     for_each = var.server_settings
-    label = "${local.prefix}${lower(each.key)}"
+    label = each.value.labels
     image = each.value.image
     private_ip = true
     region = each.value.region
