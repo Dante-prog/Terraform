@@ -31,9 +31,6 @@ module "name" {
   source = "./modules/web_server"
   linode_token = var.linode_token
   server_settings = var.environment_instance_settings
-  region = var.linode_config.region
   root_password = var.root_password
   ssh_public_key = var.ssh_public_key
-  image = var.linode_config.image
-  
 }

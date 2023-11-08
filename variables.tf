@@ -80,7 +80,7 @@ variable "ssh_public_key" {
 
 # MAP OBJECTS FOR CREATING VARIABLES
 variable "environment_instance_settings" {
-  type = map(object({type_image=string, labels=map(string)}))
+  type = map(object({type_image=string, labels=map(string), region=string, image=string}))
   default = {
     "DEV" = {
       region = "us-east"
