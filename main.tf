@@ -27,7 +27,7 @@ resource "linode_instance" "web-instances-web" {
   authorized_keys = [var.ssh_public_key]
 }
 
-module "name" {
+module "web-server" {
   source = "./modules/web_server"
   linode_token = var.linode_token
   server_settings = var.environment_instance_settings
