@@ -49,33 +49,58 @@ variable "ssh_public_key" {
 
 
 # MAP OBJECTS FOR CREATING VARIABLES
+# variable "environment_instance_settings" {
+# default = {
+#     "dev" = {
+#         region = "us-east"
+#         image = "linode/ubuntu20.04"
+#         type_image = "g6-nanode-1"
+#         labels = {
+#           environment = "dev"
+#         }
+#     }
+#     "prod" = {
+#         region = "us-east"
+#         image = "linode/ubuntu20.04"
+#         type_image = "g6-standard-2"
+#         labels = {
+#           environment = "prod"
+#         }
+#     }
+#     "qa" = {
+#         region = "us-east"
+#         image = "linode/ubuntu20.04"
+#         type_image = "g6-standard-1"
+#         labels = {
+#           environment = "qa"
+#         }
+#     }
+# }
+# }
+
+# MAP OBJECTS FOR CREATING VARIABLES
 variable "environment_instance_settings" {
-default = {
-    "dev" = {
-        region = "us-east"
-        image = "linode/ubuntu20.04"
-        type_image = "g6-nanode-1"
-        labels = {
-          environment = "dev"
-        }
+  type = map(object({type_image=string, labels=map(string)}))
+  default = {
+    "DEV" = {
+      type_image = "g6-nanode-1"
+      labels = {
+        environment = "dev"
+      }
+    },
+   "QA" = {
+      type_image = "g6-standard-1"
+      labels = {
+        environment = "qa"
+      }
+    },
+    "PROD" = {
+      type_image = "g6-standard-2"
+      labels = {
+        environment = "prod"
+      }
     }
-    "prod" = {
-        region = "us-east"
-        image = "linode/ubuntu20.04"
-        type_image = "g6-standard-2"
-        labels = {
-          environment = "prod"
-        }
-    }
-    "qa" = {
-        region = "us-east"
-        image = "linode/ubuntu20.04"
-        type_image = "g6-standard-1"
-        labels = {
-          environment = "qa"
-        }
-    }
-}
+  }
 }
 
 // Target Environment
