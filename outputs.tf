@@ -3,7 +3,8 @@
 # }
 
 
-output "web-server-ips-labels" {
-  // New Way to output the values of the instances when it's a list or complex object 
-  value = [for instance in linode_instance.web-instances-web : instance.ip_address]
-}
+# output "web-server-ips-labels" {
+#   // New Way to output the values of the instances when it's a list or complex object 
+#   value = [for instance in linode_instance.web-instances-web : instance.ip_address]
+# }
+
